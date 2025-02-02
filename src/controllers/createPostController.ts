@@ -1,23 +1,9 @@
 import type { Request, Response } from "express";
 import { z } from "zod";
 import { postModel } from "../schema/schema";
+import { zodSchema } from "../schema/zodSchema";
 
-const createPostSchema = z.object({
-    title: z.string({
-        required_error:"Title is required"
-    }).trim().min(1, {
-        message: "Title is required"
-    }).max(30, {
-        message: "Max 30 characters allowed"
-    }),
-    description: z.string({
-        required_error: "Title is required"
-    }).trim().min(1, {
-        message: "Description is required"
-    }).max(500, {
-        message: "Max 500 characters allowed"
-    }),
-})
+const createPostSchema = zodSchema.pick({description:true,title:true})
 export async function createPostContoller(req: Request, res: Response): Promise<any> {
     try{
         const body = req.body;

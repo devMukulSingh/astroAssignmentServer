@@ -16,7 +16,7 @@ app.use(cors({
 }))
 app.use(express.json())
 
-app.use('/api/v1/post',postRouter)
+app.use('/api/v1',postRouter)
 
 app.listen(PORT, () => {
     console.log("server is running at PORT", PORT)
