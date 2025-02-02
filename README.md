@@ -1,15 +1,8 @@
 # server
 
-To install dependencies:
 
-```bash
-bun install
-```
+STEP1 - Run bun install or npm install
 
-To run:
+STEP2 - Rename .env.example file to .env and enter the DATABASE_URL
 
-```bash
-bun run index.ts
-```
-
-This project was created using `bun init` in bun v1.1.42. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+STEP3 - Run bun run dev or npm run dev to start the server
